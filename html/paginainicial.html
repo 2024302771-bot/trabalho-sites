@@ -222,9 +222,67 @@
                 </div>
             </div>
         </section>
+        <!-- cadastro -->
+<section id="cadastro" class="py-5" style="background-color: #F0E2FA;">
+    <div class="container" style="max-width: 500px;">
+        <div class="card shadow p-4 border-0 rounded-4">
+            <h3 class="fw-bold text-center mb-3" style="color: #563B70;">Cadastro do Clube</h3>
 
+            <form onsubmit="event.preventDefault();">
+                <!-- E-mail -->
+                <div class="mb-3">
+                    <label for="email" class="form-label fw-bold">E-mail:</label>
+                    <input type="email" class="form-control" id="email" placeholder="seuemail@exemplo.com" required>
+                </div>
 
-        </main>
+                <!--Campo Senha -->
+                <div class="mb-3">
+                    <label for="senha" class="form-label fw-bold">Senha:</label>
+                    <input type="password" class="form-control" id="senha" placeholder="Digite sua senha" required>
+                </div>
+
+                <!--  Personagem Favorita -->
+                <div class="mb-3">
+                    <label for="poneiFavorita" class="form-label fw-bold">Personagem favorita:</label>
+                    <select class="form-select" id="poneiFavorita" required>
+                        <option value="" selected disabled>Selecione uma pônei...</option>
+                        <option value="twilight">Twilight Sparkle</option>
+                        <option value="rainbow">Rainbow Dash</option>
+                        <option value="pinkie">Pinkie Pie</option>
+                        <option value="fluttershy">Fluttershy</option>
+                        <option value="rarity">Rarity</option>
+                        <option value="applejack">Applejack</option>
+                    </select>
+                </div>
+
+                <!-- Botão Enviar-->
+                <button type="submit" class="btn btn-lg w-100 fw-bold mt-2"
+                        style="background-color: #563B70; color: white;"
+                        data-bs-toggle="modal" data-bs-target="#modalCadastro">
+                    Enviar
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!--mensagem de confirmação -->
+<div class="modal fade" id="modalCadastro" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center p-3">
+            <div class="modal-header border-0 pb-0">
+                <h5 class="modal-title fw-bold w-100" id="modalLabel" style="color: #563B70;"> Cadastro Enviado!</h5>
+            </div>
+            <div class="modal-body py-3">
+                <p class="fs-5 mb-0">Seus dados foram cadastrados com sucesso! </p>
+            </div>
+            <div class="modal-footer border-0 justify-content-center pt-0">
+                <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+    </main>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
