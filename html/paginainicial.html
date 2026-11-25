@@ -236,36 +236,66 @@
         <div class="card shadow p-4 border-0 rounded-4">
             <h3 class="fw-bold text-center mb-3" style="color: #563B70;">Cadastro do Clube</h3>
    <!-- O event.preventDefault() é um comando para impedir que a página recarregue ao clicar no botão -->
-            <form onsubmit="event.preventDefault();">
-                <!-- E-mail -->
-                <div class="mb-3">
-                    <label for="email" class="form-label fw-bold">E-mail:</label>
-                    <input type="email" class="form-control" id="email" placeholder="seuemail@exemplo.com" required>
-                </div>
-                <!--Campo Senha -->
-                <div class="mb-3">
-                    <label for="senha" class="form-label fw-bold">Senha:</label>
-                    <input type="password" class="form-control" id="senha" placeholder="Digite sua senha" required>
-                </div>
+           <!--!! Formulário com validação visual completa do Bootstrap !! -->
+<form id="formClube" class="needs-validation" novalidate>
+    
+    <!-- Campo Nome -->
+    <div class="mb-3">
+        <label for="nomeUsuario" class="form-label fw-semibold">Seu Nome</label>
+        <input type="text" class="form-control" id="nomeUsuario" placeholder="Digite seu nome completo" minlength="3" required>
+        <div class="valid-feedback">
+            Nome válido!
+        </div>
+        <div class="invalid-feedback">
+            Por favor, informe o seu nome (mínimo de 3 letras).
+        </div>
+    </div>
 
-                <!--  Personagem Favorita -->
-                <div class="mb-3">
-                    <label for="poneiFavorita" class="form-label fw-bold">Personagem favorita:</label>
-                    <select class="form-select" id="poneiFavorita" required>
-                        <option value="" selected disabled>Selecione uma pônei...</option>
-                        <option value="twilight">Twilight Sparkle</option>
-                        <option value="rainbow">Rainbow Dash</option>
-                        <option value="pinkie">Pinkie Pie</option>
-                        <option value="fluttershy">Fluttershy</option>
-                        <option value="rarity">Rarity</option>
-                        <option value="applejack">Applejack</option>
-                    </select>
-                </div>
+    <!-- Campo E-mail -->
+    <div class="mb-3">
+        <label for="emailUsuario" class="form-label fw-semibold">E-mail</label>
+        <input type="email" class="form-control" id="emailUsuario" placeholder="nome@exemplo.com" required>
+        <div class="valid-feedback">
+            E-mail válido!
+        </div>
+        <div class="invalid-feedback">
+            Por favor, insira um e-mail válido (ex: nome@email.com).
+        </div>
+    </div>
 
-                <!-- Botão Enviar-->
+    <!-- Campo Seleção de Pônei -->
+    <div class="mb-3">
+        <label for="poneiFavorito" class="form-label fw-semibold">Pônei Favorito</label>
+        <select class="form-select" id="poneiFavorito" required>
+            <option value="" selected disabled>Escolha um personagem...</option>
+            <option value="Twilight Sparkle">Twilight Sparkle</option>
+            <option value="Pinkie Pie">Pinkie Pie</option>
+            <option value="Rainbow Dash">Rainbow Dash</option>
+            <option value="Rarity">Rarity</option>
+            <option value="Applejack">Applejack</option>
+            <option value="Fluttershy">Fluttershy</option>
+        </select>
+        <div class="valid-feedback">
+            Ótima escolha!
+        </div>
+        <div class="invalid-feedback">
+            Selecione o seu pônei favorito.
+        </div>
+    </div>
+
+    <!-- Checkbox de Termos (extra comum em validações) -->
+    <div class="mb-4 form-check">
+        <input class="form-check-input" type="checkbox" value="" id="aceitoTermos" required>
+        <label class="form-check-label" for="aceitoTermos">
+            Concordo em espalhar a magia da amizade em Equestria.
+        </label>
+        <div class="invalid-feedback">
+            Você precisa marcar esta caixa antes de enviar.
+        </div>
+    </div>
+    <!-- Botão de Envio -->
                 <button type="submit" class="btn btn-lg w-100 fw-bold mt-2"
-                        style="background-color: #563B70; color: white;"
-                        data-bs-toggle="modal" data-bs-target="#modalCadastro">
+                        style="background-color: #563B70; color: white;">
                     Enviar
                 </button>
             </form>
@@ -290,9 +320,32 @@
     </div>
 </div>
     </main>
-
+<!--!! Script de validação do formulário + abertura do Modal de Sucesso !! -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+<script>
+    const form = document.getElementById("formClube");
+
+    form.addEventListener("submit", function (event) {
+        // Impede a página de recarregar
+        event.preventDefault();
+        event.stopPropagation();
+
+        // Se algum campo estiver vazio ou inválido, mostra os avisos em vermelho e para aqui
+        if (!form.checkValidity()) {
+            form.classList.add("was-validated");
+            return;
+        }
+
+        // Se tudo estiver válido, abre o modal de confirmação
+        const modal = new bootstrap.Modal(document.getElementById("modalCadastro"));
+        modal.show();
+
+        // Limpa o formulário e remove as marcas verdes/vermelhas
+        form.reset();
+        form.classList.remove("was-validated");
+    });
+</script>
+    </body>
 </html>
 
   <!-- LEMBRAR DE CUIDAR AS DIV -->
