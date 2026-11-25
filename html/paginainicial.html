@@ -27,6 +27,7 @@
     </header>
     <main>
         <!-- Carrossel de fotos -->
+        <!-- Código pronto do Bootstrap -->
         <section id="inicio" class="w-100 my-4">
             <div class="container">
                 <!-- Esse data-bs-ride="carousel" faz as fotos começarem a passar sozinhas -->
@@ -41,6 +42,7 @@
                         <button type="button" data-bs-target="#carrosselMLP" data-bs-slide-to="5" aria-label="Slide 6"></button>
                     </div>
                     <!-- fotos das pôneis-->
+                    <!-- Código pronto do Bootstrap -->
                     <div class="carousel-inner">
                         <!--Twilight (tem a classe active pra ser a primeira foto a aparecer) -->
                         <div class="carousel-item active">
@@ -81,6 +83,7 @@
                             <img src="../img/rarity (1).jpg" class="d-block w-100" alt="Rarity">
                             <div class="carousel-caption d-none d-md-block p-3 rounded" style="background-color: rgba(86, 59, 112, 0.85);">
                                 <h3 class="fw-bold text-white">Rarity</h3>
+                                 <!-- Caixinha com o texto por cima da imagem é esse aqui: -->
                                 <p class="fs-5 text-white mb-0">Elemento da Generosidade — Estilista talentosa e elegante.</p>
                             </div>
                         </div>
@@ -94,11 +97,14 @@
                         </div>
                     </div>
                     <!-- Botão da seta da esquerda para voltar a foto -->
+                    <!-- Código pronto do Bootstrap -->
                     <button class="carousel-control-prev" type="button" data-bs-target="#carrosselMLP" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Anterior</span>
                     </button>
                     <!-- Botão da seta da direita para avançar a foto -->
+                    <!-- Código pronto do Bootstrap -->
+
                     <button class="carousel-control-next" type="button" data-bs-target="#carrosselMLP" data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Próximo</span>
@@ -140,11 +146,12 @@
             </div>
         </section>
          <!-- Cards com a foto e descrição de cada pônei, vou usar a mmesma foto de antes, muito dificil fazer upload de foto -->
+            <!-- Código pronto do Bootstrap-->
         <section id="poneis" class="py-5">
             <div class="container">
                 <h2 class="text-center fw-bold mb-4" style="color: #563B70;">Conheça as Protagonistas</h2>
 
-                <!-- A classe row-cols faz os cards se organizarem sozinhos  -->
+                <!-- A classe row-cols faz os cards se organizarem sozinhos 1 por linha no celular, 3 por linha no PC -->
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
 
                     <!-- Twilight Sparkle -->
@@ -152,7 +159,7 @@
                         <div class="card h-100 shadow-sm border-0">
                             <img src="../img/twilight.jpg" class="card-img-top" alt="Twilight Sparkle" style="height: 230px; object-fit: cover;">
                             <div class="card-body text-center" style="background-color: #FAF4FF;">
-                                <!-- Etiqueta indicando o elemento -->
+                                <!-- A classe badge q cria essa etiquetinha colorida em cima da foto -->
                                 <span class="badge bg-primary fs-6 mb-2">Mágica</span>
                                 <h4 class="card-title fw-bold" style="color: #563B70;">Twilight Sparkle</h4>
                                 <p class="card-text">Estudiosa e dedicada, Twilight aprendeu sobre o valor da amizade e se tornou a Princesa de Equestria.</p>
@@ -223,18 +230,18 @@
             </div>
         </section>
         <!-- cadastro -->
+        <!--o comando required é para fazer esse campo ser obrigatório -->
 <section id="cadastro" class="py-5" style="background-color: #F0E2FA;">
     <div class="container" style="max-width: 500px;">
         <div class="card shadow p-4 border-0 rounded-4">
             <h3 class="fw-bold text-center mb-3" style="color: #563B70;">Cadastro do Clube</h3>
-
+   <!-- O event.preventDefault() é um comando para impedir que a página recarregue ao clicar no botão -->
             <form onsubmit="event.preventDefault();">
                 <!-- E-mail -->
                 <div class="mb-3">
                     <label for="email" class="form-label fw-bold">E-mail:</label>
                     <input type="email" class="form-control" id="email" placeholder="seuemail@exemplo.com" required>
                 </div>
-
                 <!--Campo Senha -->
                 <div class="mb-3">
                     <label for="senha" class="form-label fw-bold">Senha:</label>
@@ -287,7 +294,6 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
 
   <!-- LEMBRAR DE CUIDAR AS DIV -->
 
